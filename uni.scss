@@ -50,7 +50,7 @@ $uni-img-size-lg:80rpx;
 
 /* Border Radius */
 $uni-border-radius-sm: 4rpx;
-$uni-border-radius-base: 6rpx;
+$uni-border-radius-base: 16rpx;
 $uni-border-radius-lg: 12rpx;
 $uni-border-radius-circle: 50%;
 
@@ -63,6 +63,9 @@ $uni-spacing-row-lg: 30rpx;
 $uni-spacing-col-sm: 8rpx;
 $uni-spacing-col-base: 16rpx;
 $uni-spacing-col-lg: 24rpx;
+
+/* 底部导航栏 */
+$uni-spacing-base: 88rpx;
 
 /* 透明度 */
 $uni-opacity-disabled: 0.3; // 组件禁用态的透明度
