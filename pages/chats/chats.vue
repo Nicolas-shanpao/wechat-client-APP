@@ -1,6 +1,6 @@
 <template>
 	<view>
-		搜索
+		建群
 	</view>
 </template>
 

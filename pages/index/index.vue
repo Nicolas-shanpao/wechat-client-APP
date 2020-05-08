@@ -10,7 +10,7 @@
 				<text class="menubutton cuIcon-roundadd"></text>
 			</view>
 		</view>
-		<view class="chat-list" v-for="(item,index) in chatList" :key="index">
+		<view class="chat-list" v-for="(item,index) in chatList" :key="index" @tap="chat(item)">
 			<view class="chat-item">
 				<view class="chat-avatar">
 					<view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);">
@@ -51,7 +51,11 @@
 
 		},
 		methods: {
-
+			chat(item) {
+				uni.navigateTo({
+					url: "/pages/chat/chat?id=" + item.id + "&name=" + item.name
+				})
+			}
 		}
 	}
 </script>
@@ -59,6 +63,7 @@
 <style lang="scss">
 	.home {
 		padding-top: 100rpx;
+
 		.cu-bar {
 			.action {
 				.menubutton {
