@@ -1,115 +1,54 @@
 <template>
-	<view class="home">
-		<view class="fixed cu-bar bg-white search " style="border-bottom: 1px solid #c8c7cc;">
-			<view class="cu-avatar round" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big91012.jpg);"></view>
-			<view class="content">
-				{{title}}
+	<view>
+		<mainPage v-if="PageCur=='mainPage'"></mainPage>
+		<contactsPage v-if="PageCur=='contactsPage'"></contactsPage>
+		<findPage v-if="PageCur=='findPage'"></findPage>
+		<mePage v-if="PageCur=='mePage'"></mePage>
+		<view class="cu-bar tabbar bg-white shadow foot">
+			<view class="action" @click="NavChange" data-cur="mainPage">
+				<view class='cuIcon-cu-image'>
+					<image :src="'/static/tabbar/mainPage' + [PageCur=='mainPage'?'_cur':''] + '.png'"></image>
+				</view>
+				<view :class="PageCur=='mainPage'?'text-green':'text-gray'">微信</view>
 			</view>
-			<view class="action">
-				<text class="menubutton cuIcon-search"></text>
-				<text class="menubutton cuIcon-roundadd"></text>
+			<view class="action" @click="NavChange" data-cur="contactsPage">
+				<view class='cuIcon-cu-image'>
+					<image :src="'/static/tabbar/contactsPage' + [PageCur == 'contactsPage'?'_cur':''] + '.png'"></image>
+				</view>
+				<view :class="PageCur=='contactsPage'?'text-green':'text-gray'">通讯录</view>
 			</view>
-		</view>
-		<view class="chat-list" v-for="(item,index) in chatList" :key="index" @tap="chat(item)">
-			<view class="chat-item">
-				<view class="chat-avatar">
-					<view class="cu-avatar radius lg" style="background-image:url(https://ossweb-img.qq.com/images/lol/img/champion/Taric.png);">
-						<view class="cu-tag badge">{{item.noRead}}</view>
-					</view>
+			<view class="action" @click="NavChange" data-cur="findPage">
+				<view class='cuIcon-cu-image'>
+					<image :src="'/static/tabbar/findPage' + [PageCur == 'findPage'?'_cur':''] + '.png'"></image>
 				</view>
-				<view class="chat-content" :style="{width:item.isLangTime?'calc(100% - 296rpx)':'calc(100% - 196rpx)'}">
-					<view class="text-grey">
-						<view class="text-cut">{{item.name}}</view>
-						<view class="cu-tag round bg-orange sm">战士</view>
-					</view>
-					<view class="text-gray text-sm flex">
-						<view class="text-cut">
-							{{item.chat}}
-						</view>
-					</view>
+				<view :class="PageCur=='findPage'?'text-green':'text-gray'">发现</view>
+			</view>
+			<view class="action" @click="NavChange" data-cur="mePage">
+				<view class='cuIcon-cu-image'>
+					<image :src="'/static/tabbar/mePage' + [PageCur == 'mePage'?'_cur':''] + '.png'"></image>
 				</view>
-				<view class="chat-action" :style="{width:item.isLangTime?'200rpx':'100rpx'}">
-					<view class="text-grey text-xs">{{item.time|getDateDiff}}</view>
-					<view class="cuIcon-notice_forbid_fill text-gray"></view>
-				</view>
+				<view :class="PageCur=='mePage'?'text-green':'text-gray'">我</view>
 			</view>
 		</view>
 	</view>
 </template>
 
 <script>
-	import chatList from "@/commons/js/chat-test.json"
 	export default {
-		components: {},
 		data() {
-			return {
-				title: 'Hello',
-				chatList: chatList.data,
+		return {
+				PageCur: 'mainPage'
 			}
 		},
-		onLoad() {
-
-		},
 		methods: {
-			chat(item) {
-				uni.navigateTo({
-					url: "/pages/chat/chat?id=" + item.id + "&name=" + item.name
-				})
+			NavChange: function(e) {
+				console.log(e)
+				this.PageCur = e.currentTarget.dataset.cur
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
-	.home {
-		padding-top: 100rpx;
+<style>
 
-		.cu-bar {
-			.action {
-				.menubutton {
-					width: 72rpx;
-					height: 72rpx;
-					font-size: 44rpx;
-					line-height: 72rpx;
-					text-align: center;
-				}
-			}
-		}
-	}
-
-	.chat-list {
-		width: 100%;
-		height: 128rpx;
-		background-color: $uni-bg-color;
-		border-bottom: 1rpx solid #ddd;
-
-		.chat-item {
-			width: 100%;
-			height: 100%;
-			display: flex;
-			padding: 10rpx 10rpx 10rpx 30rpx;
-			align-items: center;
-			justify-content: space-between;
-			line-height: 44rpx;
-
-			.chat-avatar {
-				width: 96rpx;
-				border-radius: 8rpx;
-			}
-
-			.chat-content {
-				width: calc(100% - 196rpx);
-				padding-left: 20rpx;
-
-				.text-grey {
-					display: flex;
-				}
-			}
-
-			.chat-action {
-				width: 100rpx;
-				text-align: right;
-			}
-		}
-	}
 </style>

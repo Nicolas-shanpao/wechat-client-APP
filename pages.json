@@ -27,32 +27,42 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
+		}, {
+			"path": "pages/mainPage/chat/chat",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/details/details",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/chats/chats",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/chats-details/chats-details",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/contactsPage/contactsPage",
+			"style": {}
+		}, {
+			"path": "pages/findPage/findPage",
+			"style": {}
+		}, {
+			"path": "pages/mePage/mePage",
+			"style": {}
+		}, {
+			"path": "pages/mainPage/mandetails/mandetails",
+			"style": {
+				"navigationStyle": "custom"
+			}
 		}
-	    ,{
-            "path" : "pages/chat/chat",
-            "style" : {
-				"navigationStyle": "custom"
-			}
-        }
-        ,{
-            "path" : "pages/details/details",
-            "style" : {
-				"navigationStyle": "custom"
-			}
-        }
-        ,{
-            "path" : "pages/chats/chats",
-            "style" : {
-				"navigationStyle": "custom"
-			}
-        }
-        ,{
-            "path" : "pages/chats-details/chats-details",
-            "style" : {
-				"navigationStyle": "custom"
-			}
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
