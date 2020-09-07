@@ -40,6 +40,34 @@ export function getDateDiff(b) { //就算时间差
 	return result;
 }
 
+export function getChatDateDiffChat(b) { //就算时间差
+
+	var year = new Date().getFullYear();
+	var byear = new Date(b).getFullYear();
+	var diffYear = year - byear
+	var month = new Date().getMonth() + 1;
+	var bmonth = new Date(b).getMonth() + 1;
+	var diffMonth = month - bmonth
+	var day = new Date().getDate();
+	var bday = new Date(b).getDate();
+	var diffDay = day - bday
+	var bhour = new Date(b).getHours();
+	var bminute = new Date(b).getMinutes();
+	if (bhour < 10) {
+		bhour = '0' + bhour
+	}
+	if (diffYear >= 1) {
+		return byear + '年' + bmonth + '月' + bday + '日'
+	} else if (diffMonth >= 1) {
+		return bmonth + '月' + bday + '日'
+	} else if (diffDay > 1) {
+		return bmonth + '月' + bday + '日'
+	} else if (diffDay == 1) {
+		return '昨天'
+	} else {
+		return bhour + ':' + bminute
+	}
+}
 
 Date.prototype.format = function(format) { //格式化时间  new Date().format("yyyy-MM-dd hh:mm:ss");
 	/*

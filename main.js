@@ -13,6 +13,9 @@ Vue.component('contactsPage',contactsPage)
 import findPage from './pages/findPage/findPage.vue'
 Vue.component('findPage',findPage)
 
+import toolsPage from './pages/toolsPage/toolsPage.vue'
+Vue.component('toolsPage',toolsPage)
+
 import mePage from './pages/mePage/mePage.vue'
 Vue.component('mePage',mePage)
 

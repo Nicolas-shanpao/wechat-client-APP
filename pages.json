@@ -61,12 +61,27 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
+		}, {
+			"path": "pages/toolsPage/toolsPage",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}, {
+			"path": "pages/toolsPage/components/Refresh/Refresh",
+			"style": {
+				"app-plus": {
+					"bounce": "none"
+				}
+			}
 		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"app-plus": {
+			"bounce": "none"
+		}
 	}
 }
